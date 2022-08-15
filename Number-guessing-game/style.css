@@ -1,0 +1,139 @@
+/* Fonts */
+
+/* Bold Weigth: 700*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/* Light Weight: 300 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* SemiBold Weight: 600 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+* {
+    font-family: 'Poppins',sans-serif;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container {
+    margin: 10% 0 0 0;
+}
+
+body {
+    background: #DDDDDD;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 55px;
+    color: #1C1C1C;
+}
+
+h1 > span {
+    color: #9A55D0;
+}
+
+.sub-head {
+    width: 60%;
+    
+    font-size: 25px;
+    font-weight: 300;
+    color: #434343;
+}
+
+.sub-head > span {
+    font-weight: 600;
+}
+
+.tries-box {
+    width: 150px;
+    height: 50px;
+    background-color: #C2C2C2;
+    color: #9A55D0;
+    border-radius: 5px;
+    display: flex;
+    gap: -10px;
+    margin-top: 20px;
+}
+
+.tries-box h4:first-child {
+    margin-top: 13px;
+    text-align: left;
+}
+
+#tries-count {
+    margin-top: 13px;
+}
+
+
+.log {
+    font-size: 25px;
+    font-weight: 600;
+    color: #434343;
+    margin: 30px 0 5px 0;
+}
+
+.log > span {
+    font-weight: 600;
+}
+
+#try {
+    color: #434343;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+#play-again h1 {
+    font-size: 35px;
+}
+
+#play-again button {
+    height: 40px;
+    width:100px;
+    background-color: #9A55D0;
+    color: #fff;
+    border:none;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+input {
+    background-color: #C2C2C2;
+    width: 297px;
+    height: 45px;
+    font-size: 15px;
+    border: none;
+
+}
+
+input:focus {
+    outline: none;
+}
+
+.guess-bar {
+    margin-top: 20px;
+}
+
+#submit {
+    margin: 0;
+    background-color: #9A55D0;
+    height: 45px;
+    width: 100px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.credits {
+    margin-top: 40px;
+    color: #434343;
+}
+
+.credits > span {
+    font-weight: 600;
+}
