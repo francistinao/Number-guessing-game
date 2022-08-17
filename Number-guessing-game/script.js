@@ -32,35 +32,42 @@ closeWindow.addEventListener("click", () => {
     window.close();
 })
 
-submit.addEventListener("click", () => {
-   numberChecker(misteryNumber,gameOverDisplayValue,count) 
-})
+const click = () => {
+    submit.addEventListener("click", () => {
+        numberChecker(misteryNumber,gameOverDisplayValue,count) 
+    })
+}
+
+const decreaseCounter = () => {
+    count--
+    if(count <= 0) {
+        tryAgain.innerText = ""
+        gameOverDisplayValue = "YOU LOSE"
+        gameOverDisplay(gameOverDisplayValue)
+    }
+    console.log(count)
+    triesCounter.innerHTML = count
+}
 
 const numberChecker = (misteryNumber,gameOverDisplayValue,count) => {
     myNumber = guessNumberFromBar()
-    //A lot of bugs when using loop huhu
-    //Same as using recursion
-    while(count >= 0) {
+
         if(myNumber != misteryNumber) {
             if(myNumber < misteryNumber) {
                 messageLog.innerText = `Your number, ${myNumber} is less than the mistery number`
             } else {
                 messageLog.innerText = `Your number, ${myNumber} is greater than the mistery number`
             }
+            decreaseCounter(count)
             tryAgain.innerText = "Try Again"
-            count--
         } else {
             gameOverDisplayValue = "YOU WON"
-            gameOverDisplay(gameOverDisplayValue)
-            break
+            gameOverDisplay(gameOverDisplayValue,count)
         }
-        triesCounter.innerText = `${count}`
-    }
-    // gameOverDisplayValue = "YOU LOSE"
-    // gameOverDisplay(gameOverDisplayValue)
 }
 
 const gameOverDisplay = (gameOverDisplayValue) => {
+    count = 3
     guessNumberBar.disabled = true //if the user won, he/she cannot be  able to input a number anymore
     playAgain.style.display = "block" //The div will be visible
     messageLog.innerText = `${gameOverDisplayValue}`
@@ -74,11 +81,14 @@ play.addEventListener("click", () => {
 })
 
 //function for the user to play again
-const playAgainTrigger = (count) => {
+const playAgainTrigger = () => {
     count = 3
     triesCounter.innerText = `${count}`
     guessNumberBar.disabled = false
     messageLog.innerText = `Enter a number to guess...`
+    tryAgain.innerText = ""
     playAgain.style.display = "none"
     guessNumberBar.value = ""
 }
+
+click()
