@@ -67,7 +67,6 @@ const numberChecker = (misteryNumber,gameOverDisplayValue,count) => {
 }
 
 const gameOverDisplay = (gameOverDisplayValue) => {
-    count = 3
     guessNumberBar.disabled = true //if the user won, he/she cannot be  able to input a number anymore
     playAgain.style.display = "block" //The div will be visible
     messageLog.innerText = `${gameOverDisplayValue}`
