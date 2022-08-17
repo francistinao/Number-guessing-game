@@ -39,9 +39,11 @@ const click = () => {
 }
 
 const decreaseCounter = () => {
-    count--
+    if(count > -1) {
+        count--
+        tryAgain.innerText = "Try Again"
+    }
     if(count <= 0) {
-        tryAgain.innerText = ""
         gameOverDisplayValue = "YOU LOSE"
         gameOverDisplay(gameOverDisplayValue)
     }
@@ -58,19 +60,19 @@ const numberChecker = (misteryNumber,gameOverDisplayValue,count) => {
             } else {
                 messageLog.innerText = `Your number, ${myNumber} is greater than the mistery number`
             }
-            decreaseCounter(count)
-            tryAgain.innerText = "Try Again"
+            decreaseCounter()
         } else {
             gameOverDisplayValue = "YOU WON"
-            gameOverDisplay(gameOverDisplayValue,count)
+            gameOverDisplay(gameOverDisplayValue)
         }
 }
 
 const gameOverDisplay = (gameOverDisplayValue) => {
+    tryAgain.innerText = ""
+    submit.disabled = true;
     guessNumberBar.disabled = true //if the user won, he/she cannot be  able to input a number anymore
     playAgain.style.display = "block" //The div will be visible
     messageLog.innerText = `${gameOverDisplayValue}`
-    tryAgain.innerText = ""
 }
 
 play.addEventListener("click", () => {
@@ -82,6 +84,7 @@ play.addEventListener("click", () => {
 //function for the user to play again
 const playAgainTrigger = () => {
     count = 3
+    submit.disabled = false
     triesCounter.innerText = `${count}`
     guessNumberBar.disabled = false
     messageLog.innerText = `Enter a number to guess...`
