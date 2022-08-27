@@ -1,3 +1,3 @@
 Number Guessing game
 
-<p>The tries counter is still buggin...</p>
+<p>A simple game where you have to guess a number from 1-50 with 3 tries only</p>
