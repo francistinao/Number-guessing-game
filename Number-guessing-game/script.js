@@ -29,7 +29,8 @@ const guessNumberFromBar = () => {
 
 //If the user do not want to play again, the tab will close
 closeWindow.addEventListener("click", () => {
-    window.close();
+    window.close()
+    window.open("https://francistinao.tech/projects.html")
 })
 
 const click = () => {
